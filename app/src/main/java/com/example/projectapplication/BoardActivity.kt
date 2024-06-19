@@ -31,18 +31,20 @@ class BoardActivity : BaseActivity() {
         super.onStart()
 
         if (MyApplication.checkAuth()) {
+            // 'email' 필드가 현재 로그인한 사용자의 이메일과 일치하는 문서만 가져오도록 쿼리 수정
             MyApplication.db.collection("comments")
+                .whereEqualTo("email", MyApplication.email)
                 .orderBy("date_time", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener { result ->
                     val itemList = mutableListOf<ItemData>()
-                    // Populate itemList from Firestore
-                    for(document in result){
+                    // Firestore에서 가져온 데이터를 itemList에 추가
+                    for (document in result) {
                         val item = document.toObject(ItemData::class.java)
                         item.docId = document.id
                         itemList.add(item)
                     }
-                    // Use GridLayoutManager to display 3 items per row
+                    // 아이템을 그리드 레이아웃으로 표시하도록 설정
                     val layoutManager = GridLayoutManager(this, 3)
                     binding.recyclerView.layoutManager = layoutManager
                     binding.recyclerView.adapter = BoardAdapter(this, itemList)
@@ -52,6 +54,7 @@ class BoardActivity : BaseActivity() {
                 }
         }
     }
+
     override fun onResume() {
         super.onResume()
         applyUserSettings()
