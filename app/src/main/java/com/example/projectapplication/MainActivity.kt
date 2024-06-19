@@ -177,6 +177,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                             items.addAll(exactMatches)
                             items.addAll(otherItems)
                             xmlAdapter.notifyDataSetChanged()
+                            saveCurrentTime()  // 검색 완료 후 현재 시간 저장
                         } else {
                             Log.d("mobileApp", "Response Body is null or empty")
                         }
@@ -351,11 +352,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         try {
             openFileOutput(fileName, Context.MODE_PRIVATE).use {
                 it.write(fileContents.toByteArray())
+                Log.d("MainActivity", "Search time saved: $fileContents")
             }
         } catch (e: FileNotFoundException) {
-            e.printStackTrace()
+            Log.e("MainActivity", "File not found", e)
         } catch (e: IOException) {
-            e.printStackTrace()
+            Log.e("MainActivity", "Error writing to file", e)
         }
     }
 
@@ -366,27 +368,28 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         try {
             openFileInput(fileName).use {
                 lastSearchTime = it.bufferedReader().readLine()
+                Log.d("MainActivity", "Last search time read: $lastSearchTime")
             }
         } catch (e: FileNotFoundException) {
-            e.printStackTrace()
+            Log.e("MainActivity", "File not found", e)
         } catch (e: IOException) {
-            e.printStackTrace()
+            Log.e("MainActivity", "Error reading from file", e)
         }
 
         return lastSearchTime
     }
 
     private fun saveCurrentTime() {
-        // 파일에 현재 시간 저장
+        // 현재 시간을 파일에 저장
         saveCurrentTimeToFile()
+        Log.d("MainActivity", "Current time saved after successful response")
     }
 
-    private fun displayLastSearchTime() {
-        // 파일에서 마지막 검색 시간 가져오기
-        val lastSearchTime = readLastSearchTimeFromFile()
 
+    private fun displayLastSearchTime() {
         // UI에 마지막 검색 시간 표시
-        binding.lastsaved.text = lastSearchTime
+        val lastSearchTime = readLastSearchTimeFromFile()
+        binding.lastsaved.text = lastSearchTime ?: "No search made yet."
     }
 
     private fun applyBackgroundColor() {
@@ -432,6 +435,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         applyUserSettings()
         applyUserPhoto()
         applyTextSize()
+        displayLastSearchTime()
     }
 
 }

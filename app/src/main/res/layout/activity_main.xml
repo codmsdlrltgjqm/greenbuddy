@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer"
+    android:background="@drawable/greenbuddyback"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -44,8 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/xmlRecyclerView"
-            android:background="#ffffee" />
+            android:id="@+id/xmlRecyclerView"/>
     </LinearLayout>
 
     <!-- 2. 드로어 화면 -->
