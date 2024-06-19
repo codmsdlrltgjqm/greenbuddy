@@ -1,0 +1,52 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="my_color">
+        <item>코코아</item>
+        <item>초록</item>
+        <item>하늘</item>
+    </string-array>
+
+    <string-array name="my_color_values">
+        <item>#BAA898</item>
+        <item>#72BA9B</item>
+        <item>#C4ECF9</item>
+    </string-array>
+
+    <string-array name="my_font">
+        <item>기본</item>
+        <item>망고또박체</item>
+        <item>지마켓산스체</item>
+        <item>조선100년체</item>
+    </string-array>
+
+    <string-array name="my_font_values">
+        <item>default_font</item>
+        <item>mandoddobak</item>
+        <item>gmarket</item>
+        <item>chosun</item>
+    </string-array>
+
+    <string-array name="my_size">
+        <item>작게</item>
+        <item>중간</item>
+        <item>크게</item>
+    </string-array>
+
+    <string-array name="my_size_values">
+        <item>12.0f</item>
+        <item>16.0f</item>
+        <item>20.0f</item>
+    </string-array>
+
+    <string-array name="my_photo">
+        <item>새싹</item>
+        <item>풀잎</item>
+        <item>꽃</item>
+    </string-array>
+
+    <string-array name="my_photo_values">
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+    </string-array>
+</resources>

@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="화면 설정">
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/my_photo"
+            app:entryValues="@array/my_photo_values"
+            app:key="photo"
+            app:title="프로필 사진 선택"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/my_color"
+            app:entryValues="@array/my_color_values"
+            app:key="color"
+            app:title="색상 선택"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/my_font"
+            app:entryValues="@array/my_font_values"
+            app:key="font"
+            app:title="폰트 선택"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="16.0f"
+            app:entries="@array/my_size"
+            app:entryValues="@array/my_size_values"
+            app:key="size"
+            app:title="크기 선택"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
