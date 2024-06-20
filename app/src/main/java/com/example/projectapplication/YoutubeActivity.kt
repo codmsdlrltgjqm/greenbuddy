@@ -24,7 +24,7 @@ class YoutubeActivity : BaseActivity() {
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
-        lifecycle.addObserver(binding.youtubePlayerView)
+        lifecycle.addObserver(binding.youtubePlayerView2)
         binding.youtubePlayerView2.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 super.onReady(youTubePlayer)
@@ -34,7 +34,7 @@ class YoutubeActivity : BaseActivity() {
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
-        lifecycle.addObserver(binding.youtubePlayerView)
+        lifecycle.addObserver(binding.youtubePlayerView3)
         binding.youtubePlayerView3.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 super.onReady(youTubePlayer)
@@ -44,7 +44,7 @@ class YoutubeActivity : BaseActivity() {
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
-        lifecycle.addObserver(binding.youtubePlayerView)
+        lifecycle.addObserver(binding.youtubePlayerView4)
         binding.youtubePlayerView4.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 super.onReady(youTubePlayer)

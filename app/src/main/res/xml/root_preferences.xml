@@ -15,7 +15,7 @@
             app:entries="@array/my_color"
             app:entryValues="@array/my_color_values"
             app:key="color"
-            app:title="색상 선택"
+            app:title="마지막 검색 시간 배경 색상 선택"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
@@ -31,7 +31,7 @@
             app:entries="@array/my_size"
             app:entryValues="@array/my_size_values"
             app:key="size"
-            app:title="크기 선택"
+            app:title="마지막 검색 시간 폰트 크기 선택"
             app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>

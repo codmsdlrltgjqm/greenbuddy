@@ -3,7 +3,7 @@
     <item
         android:id="@+id/item_board"
         android:icon="@android:drawable/ic_menu_agenda"
-        android:title="게시판" />
+        android:title="나의 식물 성장 일기 🌱" />
 
     <item
         android:id="@+id/item_setting"

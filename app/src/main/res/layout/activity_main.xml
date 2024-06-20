@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/edtName"
-                android:hint="식물 이름을 입력하세요. 예: 듀란타" />
+                android:hint="식물 이름을 입력하세요. 예: 동백" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

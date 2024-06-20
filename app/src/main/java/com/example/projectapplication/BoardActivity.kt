@@ -38,13 +38,11 @@ class BoardActivity : BaseActivity() {
                 .get()
                 .addOnSuccessListener { result ->
                     val itemList = mutableListOf<ItemData>()
-                    // Firestore에서 가져온 데이터를 itemList에 추가
                     for (document in result) {
                         val item = document.toObject(ItemData::class.java)
                         item.docId = document.id
                         itemList.add(item)
                     }
-                    // 아이템을 그리드 레이아웃으로 표시하도록 설정
                     val layoutManager = GridLayoutManager(this, 3)
                     binding.recyclerView.layoutManager = layoutManager
                     binding.recyclerView.adapter = BoardAdapter(this, itemList)
@@ -52,6 +50,7 @@ class BoardActivity : BaseActivity() {
                 .addOnFailureListener {
                     Toast.makeText(this, "서버 데이터 획득 실패.", Toast.LENGTH_LONG).show()
                 }
+
         }
     }
 

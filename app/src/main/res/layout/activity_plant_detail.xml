@@ -6,7 +6,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        >
+
+            <TextView
+                android:id="@+id/plant_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5AAF76"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="식물 상세 정보 🌱"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
+
 
         <ImageView
             android:id="@+id/ivPlantImage"
@@ -25,7 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="식물학명"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                />
             <TextView
                 android:id="@+id/tvPlantName"
                 android:layout_width="match_parent"
